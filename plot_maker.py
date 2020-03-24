@@ -57,16 +57,20 @@ for region_name in italian_regions:
         totale_casi = regione_csv["totale_casi"].values
         nuovi_casi_positivi = [totale_casi[0]]
         for g in range(len(totale_casi) - 1):
-            nuovi_casi_positivi += [totale_casi[g+1] - totale_casi[g]]
+            temp = totale_casi[g+1] - totale_casi[g]
+            # numero di casi deve essere positivo, altrimenti None
+            nuovi_casi_positivi += [temp] if temp >= 0 else [0]
         
         # ottengo il numero dei nuovi tamponi giornalieri
         numero_tamponi = regione_csv["tamponi"].values
         delta_tamponi = [numero_tamponi[0]]
         for g in range(len(numero_tamponi) - 1):
-            delta_tamponi += [numero_tamponi[g+1] - numero_tamponi[g]]
+            temp = numero_tamponi[g+1] - numero_tamponi[g]
+            # numero di tamponi deve essere positivo, altrimenti None
+            delta_tamponi += [temp] if temp >= 0 else [0]
         
         # percentuale nuovi_positivi/nuovi_tamponi
-        div = lambda x: x[0]/x[1] if 0<(x[0]/x[1])<1 else None
+        div = lambda x: (x[0]/x[1]) if 0<(x[0]/x[1])<1 else None
         ratio_nuovi_pos_nuovi_tamp = list(map(div, list(zip(nuovi_casi_positivi, delta_tamponi))))
         
         # --------------- END OBTAIN DATA ---------------------------
