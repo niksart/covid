@@ -1,0 +1,5 @@
+deploy:
+  provider: script
+  script: python3 plot_maker.py
+  on:
+    branch: gh-pages
