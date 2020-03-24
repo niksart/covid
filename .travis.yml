@@ -1,5 +1,10 @@
-deploy:
-  provider: script
-  script: python3 plot_maker.py
-  on:
-    branch: gh-pages
+language: python
+
+python:
+  - "3.7.3"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python plot_maker.py
