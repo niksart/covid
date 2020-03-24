@@ -97,4 +97,4 @@ for region_name in italian_regions:
         fig.set_size_inches(17, 5)
         plt.title(region_name + ": confronto giornaliero tra nuovi casi positivi e nuovi tamponi")
         
-        plt.savefig("plots/" + region_name + "/rapporto_nuovi_casi_tamponi.jpg", dpi=200, bbox_inches='tight')
+        plt.savefig("plots/" + region_name + "/rapporto_nuovi_casi_tamponi.png", dpi=200, bbox_inches='tight')
