@@ -33,7 +33,7 @@ for url in urls:
 
 # auxiliary function
 def parse_data(s):
-    s = s.split(" ")[0]
+    s = s.split("T")[0]
     mese = s.split("-")[1]
     giorno = s.split("-")[2]
     
