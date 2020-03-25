@@ -1,39 +1,54 @@
-<script>
-  function imageUpdate() {
-    var e = document.getElementById("image");
-    var path = e.options[e.selectedIndex].value;
-    document.getElementById('plot').src= path;
-  }
-</script>
 
-<h1>COVID-19 plots</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COVID-19 plots</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nicola Sartorato (niksart)">
+    <meta name="description" content="Grafici per regione che descrivono i dati divulgati dalla protezione civile nel corso dell'emergenza COVID-19">
+  	<meta name="keywords" content="covid19,coronavirus,tamponi,positivi,rapporto nuovi casi tamponi, grafici, plots">
+</head>
 
-<h2>Confronto giornaliero nuovi casi su numero tamponi </h2>
-<p> Seleziona la regione:
-  <select name="image" id="image" class="form-control" onchange="imageUpdate();">
-    <option selected="selected"></option>
-    <option value="plots/Abruzzo/rapporto_nuovi_casi_tamponi.png">Abruzzo</option>
-    <option value="plots/Basilicata/rapporto_nuovi_casi_tamponi.png">Basilicata</option>
-    <option value="plots/P.A. Bolzano/rapporto_nuovi_casi_tamponi.png">P.A. Bolzano</option>
-    <option value="plots/Calabria/rapporto_nuovi_casi_tamponi.png">Calabria</option>
-    <option value="plots/Campania/rapporto_nuovi_casi_tamponi.png">Campania</option>
-    <option value="plots/Emilia Romagna/rapporto_nuovi_casi_tamponi.png">Emilia Romagna</option>
-    <option value="plots/Friuli Venezia Giulia/rapporto_nuovi_casi_tamponi.png">Friuli Venezia Giulia</option>
-    <option value="plots/Lazio/rapporto_nuovi_casi_tamponi.png">Lazio</option>
-    <option value="plots/Liguria/rapporto_nuovi_casi_tamponi.png">Liguria</option>
-    <option value="plots/Lombardia/rapporto_nuovi_casi_tamponi.png">Lombardia</option>
-    <option value="plots/Marche/rapporto_nuovi_casi_tamponi.png">Marche</option>
-    <option value="plots/Molise/rapporto_nuovi_casi_tamponi.png">Molise</option>
-    <option value="plots/Piemonte/rapporto_nuovi_casi_tamponi.png">Piemonte</option>
-    <option value="plots/Puglia/rapporto_nuovi_casi_tamponi.png">Puglia</option>
-    <option value="plots/Sardegna/rapporto_nuovi_casi_tamponi.png">Sardegna</option>
-    <option value="plots/Sicilia/rapporto_nuovi_casi_tamponi.png">Sicilia</option>
-    <option value="plots/Toscana/rapporto_nuovi_casi_tamponi.png">Toscana</option>
-    <option value="plots/P.A. Trento/rapporto_nuovi_casi_tamponi.png">P.A. Trento</option>
-    <option value="plots/Umbria/rapporto_nuovi_casi_tamponi.png">Umbria</option>
-    <option value="plots/Valle d'Aosta/rapporto_nuovi_casi_tamponi.png">Valle d'Aosta</option>
-    <option value="plots/Veneto/rapporto_nuovi_casi_tamponi.png">Veneto</option>
-  </select>
-</p>
+<body>
+  <script>
+    function imageUpdate() {
+      var e = document.getElementById("image");
+      var path = e.options[e.selectedIndex].value;
+      document.getElementById('plot').src= path;
+    }
+  </script>
 
-<img id="plot" style="width: 100%"/>
+  <h1>COVID-19 plots</h1>
+
+  <h2>Confronto giornaliero nuovi casi su numero tamponi </h2>
+  <p> Seleziona la regione:
+    <select name="image" id="image" class="form-control" onchange="imageUpdate();">
+      <option selected="selected"></option>
+      <option value="plots/Abruzzo/rapporto_nuovi_casi_tamponi.png">Abruzzo</option>
+      <option value="plots/Basilicata/rapporto_nuovi_casi_tamponi.png">Basilicata</option>
+      <option value="plots/P.A. Bolzano/rapporto_nuovi_casi_tamponi.png">P.A. Bolzano</option>
+      <option value="plots/Calabria/rapporto_nuovi_casi_tamponi.png">Calabria</option>
+      <option value="plots/Campania/rapporto_nuovi_casi_tamponi.png">Campania</option>
+      <option value="plots/Emilia Romagna/rapporto_nuovi_casi_tamponi.png">Emilia Romagna</option>
+      <option value="plots/Friuli Venezia Giulia/rapporto_nuovi_casi_tamponi.png">Friuli Venezia Giulia</option>
+      <option value="plots/Lazio/rapporto_nuovi_casi_tamponi.png">Lazio</option>
+      <option value="plots/Liguria/rapporto_nuovi_casi_tamponi.png">Liguria</option>
+      <option value="plots/Lombardia/rapporto_nuovi_casi_tamponi.png">Lombardia</option>
+      <option value="plots/Marche/rapporto_nuovi_casi_tamponi.png">Marche</option>
+      <option value="plots/Molise/rapporto_nuovi_casi_tamponi.png">Molise</option>
+      <option value="plots/Piemonte/rapporto_nuovi_casi_tamponi.png">Piemonte</option>
+      <option value="plots/Puglia/rapporto_nuovi_casi_tamponi.png">Puglia</option>
+      <option value="plots/Sardegna/rapporto_nuovi_casi_tamponi.png">Sardegna</option>
+      <option value="plots/Sicilia/rapporto_nuovi_casi_tamponi.png">Sicilia</option>
+      <option value="plots/Toscana/rapporto_nuovi_casi_tamponi.png">Toscana</option>
+      <option value="plots/P.A. Trento/rapporto_nuovi_casi_tamponi.png">P.A. Trento</option>
+      <option value="plots/Umbria/rapporto_nuovi_casi_tamponi.png">Umbria</option>
+      <option value="plots/Valle d'Aosta/rapporto_nuovi_casi_tamponi.png">Valle d'Aosta</option>
+      <option value="plots/Veneto/rapporto_nuovi_casi_tamponi.png">Veneto</option>
+    </select>
+  </p>
+
+  <img id="plot" style="width: 100%"/>
+
+</body>
