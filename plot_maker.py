@@ -6,7 +6,7 @@ import requests
 import os
 
 italian_regions = ['Abruzzo', 'Basilicata', 'P.A. Bolzano', 'Calabria', 'Campania',
-       'Emilia Romagna', 'Friuli Venezia Giulia', 'Lazio', 'Liguria',
+       'Friuli Venezia Giulia', 'Lazio', 'Liguria',
        'Lombardia', 'Marche', 'Molise', 'Piemonte', 'Puglia', 'Sardegna',
        'Sicilia', 'Toscana', 'P.A. Trento', 'Umbria', "Valle d'Aosta",
        'Veneto']
@@ -46,6 +46,7 @@ plot_type = 0
 regioni_csv = pd.read_csv("data/regioni.csv")
 
 for region_name in italian_regions:
+    print(region_name)
     if plot_type == 0:
         # --------------- OBTAIN DATA -------------------------------------
         
@@ -55,6 +56,7 @@ for region_name in italian_regions:
         
         # nuovi casi all'interno della regione
         totale_casi = regione_csv["totale_casi"].values
+        print(totale_casi)
         nuovi_casi_positivi = [totale_casi[0]]
         for g in range(len(totale_casi) - 1):
             temp = totale_casi[g+1] - totale_casi[g]
