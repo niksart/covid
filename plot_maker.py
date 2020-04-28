@@ -34,10 +34,9 @@ for url in urls:
 # auxiliary function
 def parse_data(s):
     s = s.split("T")[0]
-    mese = s.split("-")[1]
     giorno = s.split("-")[2]
     
-    return giorno + "/" + str(int(mese))
+    return giorno
 
 # 0: regione_nuovi/tamponi
 # 1: provincia totali e logaritmo totali TODO
