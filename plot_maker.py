@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.ticker as plticker
 import seaborn
 import requests
 import os
@@ -33,10 +34,7 @@ for url in urls:
 
 # auxiliary function
 def parse_data(s):
-    s = s.split("T")[0]
-    giorno = s.split("-")[2]
-    
-    return giorno
+    return s.split("T")[0]
 
 # 0: regione_nuovi/tamponi
 # 1: provincia totali e logaritmo totali TODO
@@ -82,8 +80,8 @@ for region_name in italian_regions:
         
         ax1.set_xlabel("Giorni")
         ax1.set_ylabel("Unità")
-        bar_pos = ax1.bar(ind+w, nuovi_casi_positivi, color="tab:red", width=w)
-        bar_tamp = ax1.bar(ind, delta_tamponi, color="tab:grey", width=w)
+        bar_pos = ax1.bar(ind+w, nuovi_casi_positivi, color="tab:red", width=w, linewidth=0)
+        bar_tamp = ax1.bar(ind, delta_tamponi, color="tab:grey", width=w, linewidth=0)
         ax1.tick_params(axis='y')
         
         ax1.set_xticks(ind+(w/2))
@@ -97,6 +95,9 @@ for region_name in italian_regions:
         ax2.set_ylabel('Nuovi casi positivi / nuovi tamponi (al giorno)', color=color)  # we already handled the x-label with ax1
         line_perc = ax2.plot(giorni, ratio_nuovi_pos_nuovi_tamp, color=color)
         ax2.tick_params(axis='y', labelcolor=color)
+        fig.autofmt_xdate() # do not overlap dates
+        loc = plticker.MultipleLocator(base=30) # one tick every month
+        ax2.xaxis.set_major_locator(loc)
         
         fig.tight_layout()  # otherwise the right y-label is slightly clipped
         fig.set_size_inches(17, 5)
